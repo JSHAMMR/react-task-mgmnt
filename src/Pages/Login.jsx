@@ -13,48 +13,58 @@ export default function Login() {
   };
   async function LoginBtn() {
     store.dispatch(showLoading());
-    const res = await axios.post(
-      "https://dev-dl.tdcx.com:3092/login",
-      {
-        headers: headers,
-      },
-      {
-        name: "Authorization",
-        apiKey: "qW1hrT2",
-      }
-    );
-    store.dispatch(hideLoading());
-    if (res?.data) {
-      store.dispatch(login(res.data));
-      history.push("/dashboard");
-    }
+    // const res = await axios.post(
+    //   "https://dev-dl.tdcx.com:3092/login",
+    //   {
+    //     headers: headers,
+    //   },
+    //   {
+    //     name: "Authorization",
+    //     apiKey: "qW1hrT2",
+    //   }
+    // );
+    // store.dispatch(hideLoading());
+    // if (res?.data) {
+    //   store.dispatch(login(res.data));
+    //   history.push("/dashboard");
+    // }
+
+    history.push("/dashboard"); //temp
   }
 
   return (
-    <form>
-      <h3>Log in</h3>
+    <div className="inner">
+      <form role="form" class="form-horizontal" onSubmit={LoginBtn}>
+        <div class="login">Log in</div>
 
-      <div className="form-group">
-        <label>Email</label>
-        <input
-          type="email"
-          className="form-control"
-          placeholder="Enter email"
-        />
-      </div>
+        <div className="form-group">
+          <input
+            type="text"
+            class="input"
+            className="form-control"
+            placeholder="Enter id"
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Password</label>
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Enter password"
-        />
-      </div>
+        <div className="form-group">
+          <input
+            type="text"
+            class="input"
+            className="form-control"
+            placeholder="Enter name"
+          />
+        </div>
 
-      <button type="submit" className="btn btn-dark btn-lg btn-block">
-        Sign in
-      </button>
-    </form>
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <button type="submit" class="btn btn-default">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }

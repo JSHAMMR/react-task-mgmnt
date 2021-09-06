@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: #f4f4f6 0% 0% no-repeat padding-box;
+  opacity: 1;
 }
 
 .App-logo {
@@ -35,4 +37,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.login {
+  top: 250px;
+  left: 476px;
+  width: 57px;
+  height: 24px;
+  text-align: left;
+  font: normal normal medium 20px/24px Montserrat;
+  letter-spacing: 0px;
+  color: #537178;
+  opacity: 1;
+  font-size: 20px;
+}
+.input {
+  top: 298px;
+  left: 476px;
+  width: 244px;
+  height: 40px;
+  background: #eef1f8 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  opacity: 1;
 }
